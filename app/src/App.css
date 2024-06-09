@@ -1,0 +1,145 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.slide-container{
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.card.border-light.m-2.w-auto {
+  border: none;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+  padding-left: 43px;
+  padding-right: 43px;
+}
+
+.subcategory-list{
+  display: ruby-text !important;
+}
+
+.subcatehory-menu-img{
+  border-radius: 11px;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light {
+  position: sticky;
+  top: 0px;
+  z-index: 9;
+}
+
+.price-tag{
+  color: #f47a00;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.container-counter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.minus, .plus {
+  font-size: 20px;
+  color: #00b050;
+}
+
+.number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00b050;
+}
+
+.gnBTYr {
+  font-family: Gilroy;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: rgb(27, 166, 114);
+}
+.kyHIFY {
+  z-index: 1;
+  padding-left: 16px;
+  padding-right: 12px;
+  transition: all 100ms ease-in-out 0s;
+  transform: translateX(0px);
+}
+
+.fCWvDK {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(226, 226, 231);
+  height: 40px;
+  border-radius: 8px;
+  width: 120px;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
+}
+
+.fPwKJH {
+  position: absolute;
+  inset: 0px;
+}
+
+.iUuudI {
+  transition: none 0s ease 0s;
+  height: 100%;
+  text-align: center;
+  cursor: none;
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  transform: translateY(0px);
+}
+
