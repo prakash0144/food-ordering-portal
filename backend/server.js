@@ -1,39 +1,35 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
-const path = require('path');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+require('dotenv').config(); // Load environment variables from .env file
+
+const adminRoutes = require('./routes/admin');
+// const authRoutes = require('./routes/auth');
+const foodItemsRouter = require('./routes/fooditems');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://prakashsangave:prakashEcommerce@cluster0.v8mshjc.mongodb.net/')
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
-
-    
-const foodItemsRouter = require('../backend/routes/fooditems');
+// Routes
+app.use('/admin', adminRoutes);
+// app.use('/auth', authRoutes);
 app.use('/api/food-items', foodItemsRouter);
 
-// ========//// LOCAL STORAGE DATA FETCHING START \\\\==========
+// MongoDB Connection
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
-// app.get('/api/menu', (req, res) => {
-//   const filePath = path.join(__dirname, 'data', 'menu.json');
-//   fs.readFile(filePath, 'utf8', (err, data) => {
-//       if (err) {
-//           res.status(500).send('Error reading data');
-//           return;
-//       }
-//       res.json(JSON.parse(data));
-//   });
-// });
-
-// ========//// LOCAL STORAGE DATA FETCHING START \\\\==========
-
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
