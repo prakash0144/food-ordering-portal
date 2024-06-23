@@ -143,3 +143,6 @@ nav.navbar.navbar-expand-lg.navbar-light {
   transform: translateY(0px);
 }
 
+input.form-control{
+  background: rgba(184, 184, 184, 0.479) !important;
+}

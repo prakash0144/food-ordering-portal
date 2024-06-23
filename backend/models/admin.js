@@ -1,49 +1,20 @@
+
 const mongoose = require('mongoose');
 
-const SubitemSchema = new mongoose.Schema({
-  subname: {
-    type: String,
-    required: true
-  },
-  type: {
-    type: String,
-    required: true
-  },
-  name: {
-    type: String,
-    required: true
-  },
-  image: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  price: {
-    type: Number,
-    required: true
-  },
-  rating: {
-    type: Number,
-    required: true
-  }
+const foodSubitemSchema = new mongoose.Schema({
+  subname: String,
+  type: String,
+  name: String,
+  url: String,
+  description: String,
+  price: Number,
+  rating: Number
 });
 
-const FoodSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  image: {
-    type: String,
-    required: true
-  },
-  subitems: {
-    type: [SubitemSchema],
-    required: true
-  }
+const foodCategorySchema = new mongoose.Schema({
+  name: String,
+  image: String,
+  subitems: [foodSubitemSchema]
 });
 
-module.exports = mongoose.model('Food', FoodSchema);
+module.exports = mongoose.model('FoodCategory', foodCategorySchema);

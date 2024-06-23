@@ -7,8 +7,8 @@ const router = express.Router();
 // User registration route
 router.post('/register', async (req, res) => {
   try {
-    const { name, email, password } = req.body;
-    if (!name || !email || !password) {
+    const { name, email, mobile, password } = req.body;
+    if (!name || !email || !mobile || !password) {
       return res.status(400).json({ msg: 'Please provide all fields' });
     }
 
@@ -23,6 +23,7 @@ router.post('/register', async (req, res) => {
     user = new User({
       name,
       email,
+      mobile,
       password: hashedPassword
     });
 

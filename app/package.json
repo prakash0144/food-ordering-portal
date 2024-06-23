@@ -5,6 +5,7 @@
   "private": true,
   "proxy": "http://localhost:5000",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.2",
     "@tabler/icons-react": "^3.5.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -12,6 +13,7 @@
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "gh-pages": "^6.1.1",
+    "mdb-react-ui-kit": "^8.0.0",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.3.1",
@@ -26,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
