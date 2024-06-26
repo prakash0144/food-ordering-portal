@@ -83,7 +83,7 @@ function CategoryButtons({ onAddToCart, cartCount }) {
   ref={scrollContainer}
   className='slide-container category-list d-flex' style={{ overflow: 'auto', scrollbarWidth: 'none' }} >
           {menuCategories.map((category, index) => (
-            <div key={index} className='card border-light m-2 w-auto category-item col-2 p-0' onClick={() => handleSelectCategory(category)}>
+            <div key={index} className='card border-light m-2 w-auto category-item col-sm-4 col-12 col-md-4 col-lg-3 col-xl-2 p-0' onClick={() => handleSelectCategory(category)}>
               <img className='category-item-img' src={category.image} width="170" height="208" alt={category.name} />
               <div className='card-body text-center'>{category.name}</div>
             </div>
@@ -96,13 +96,13 @@ function CategoryButtons({ onAddToCart, cartCount }) {
               {selectedCategory.subitems.map((item, idx) => (
                 <div key={idx} className='col-md-9 mb-3' onClick={() => handleSelectItem(item)}>
                   <div className='card'>
-                    <div className='card-body'>
+                    <div className='card-body '>
                       <div className='row'>
-                        <div className='col-12 d-flex'>
-                          <div className='col-4'>
+                        <div className='col-12 row'>
+                          <div className='col-md-6 col-lg-4 col-sm-12 homepage-content-min'>
                             <img className='subcatehory-menu-img' src={item.url} width="204" height="180" alt='apple' />
                           </div>
-                          <div className='col-8'>
+                          <div className='col-md-6 col-lg-8 col-sm-12'>
                             <h5 className='card-title'>{item.name}</h5>
                             <p className='card-text'>{item.description}</p>
                             <div className='d-flex justify-content-between'>

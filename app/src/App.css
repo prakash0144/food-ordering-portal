@@ -146,3 +146,17 @@ nav.navbar.navbar-expand-lg.navbar-light {
 input.form-control{
   background: rgba(184, 184, 184, 0.479) !important;
 }
+
+@media only screen and (min-width: 600px) {
+  .col-md-6.col-sm-12.homepage-content-min {
+    text-align: center;
+}
+
+.card-body.cart-item-details.p-0 {
+  height: 302px !important;
+}
+
+/* .cart-details{
+  margin-top: 20px;
+} */
+}

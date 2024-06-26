@@ -69,21 +69,28 @@ function CartPage({ cartItems }) {
         <div className='container mt-5'>
           <div className='col-12'>
             <div className='row'>
-              <div className='col-7'>
+              <div className='col-sm-7'>
                 <div className='row'>
                   <div className='col-12'>
                     {items.map((item, idx) => (
                       <div className='row' key={idx}>
                         <div className='card border-light p-0'>
-                          <div className='card-body p-0'>
+                          <div className='card-body cart-item-details p-0'> 
                             <div className='row'>
-                              <div className='col-4'>
-                                <img src={item.url} width="194" height="140" style={{ borderRadius: "15px" }} alt={item.name} />
+                              <div className='col-lg-5 col-xl-4 col-md-6 col-sm-12'>
+                              <button className='d-block d-md-none offset-11' onClick={() => handleDelete(idx)} style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="16" height="16" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                      <path d="M18 6L6 18" />
+                                      <path d="M6 6l12 12" />
+                                    </svg>
+                                  </button>
+                                <img src={item.url} width="194" className='col-sm-12' height="140" style={{ borderRadius: "15px" }} alt={item.name} />
                               </div>
-                              <div className='col-8'>
+                              <div className='col-lg-7 col-xl-8 col-sm-6 col-sm-12'>
                                 <div className='d-flex justify-content-between'>
                                   <h5>{item.name}</h5>
-                                  <button onClick={() => handleDelete(idx)} style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
+                                  <button className='d-none d-md-block' onClick={() => handleDelete(idx)} style={{ border: 'none', background: 'transparent', cursor: 'pointer' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-x" width="16" height="16" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                       <path d="M18 6L6 18" />
@@ -110,7 +117,7 @@ function CartPage({ cartItems }) {
                                   <b><span> </span>{item.rating}</b>
                                 </span>
 
-                                <div className='w-100 p-3' style={cartfooter}>
+                                <div className='w-100 p-3 cart-details' style={cartfooter}>
                                   <div className='w-100 d-flex justify-content-between'>
                                     <span className='price-tag'>${item.price}</span>
                                     <div className="counter" style={counter}>
@@ -141,7 +148,7 @@ function CartPage({ cartItems }) {
                   </div>
                 </div>
               </div>
-              <div className='col-5'>
+              <div className='col-sm-5'>
                 <div className='card'>
                   <div className='col-12'>
                     <div className='row'>
