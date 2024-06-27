@@ -100,7 +100,7 @@ function CartPage({ cartItems }) {
                                 </div>
                                 <div className='d-flex justify-content-between m-1'>
                                   <span className='text-primary'>{item.subname}</span>
-                                  <span className={`badge ${item.type === 'veg' ? 'bg-success' : 'bg-danger'}`}>{item.type}</span>
+                                  <span className={`badge ${item.type === 'veg' ? 'bg-success h-50' : 'bg-danger h-50'}`}>{item.type}</span>
                                 </div>
 
                                 <span>
